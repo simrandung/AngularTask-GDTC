@@ -29,6 +29,7 @@ export class NotesService {
   getAllNotes(): Note[] {
     return [...this.notes];
   }
+  
 
   deleteNote(id: number): void {
     this.notes = this.notes.filter(n => n.id !== id);

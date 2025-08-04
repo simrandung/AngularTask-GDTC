@@ -2,8 +2,12 @@
   <div>
     <span style="font-weight: bold; font-size: 20px;">📝 NotesApp</span>
   </div>
+   <h1>Welcome, {{username}}</h1>
+  
+
   <div style="display: flex; gap: 20px; font-size: 16px;">
-    <a routerLink="/" style="color: white; text-decoration: none;">Home</a>
-    <a routerLink="/notes" style="color: white; text-decoration: none;">Notes</a>
+    
+    <a mat-raised-button routerLink="/notes" style="text-decoration: none;" (click)="notes()">Notes</a>
+    <a mat-raised-button (click)="logout()" color="warn">Logout</a>
   </div>
 </nav>
