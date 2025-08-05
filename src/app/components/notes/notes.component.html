@@ -1,11 +1,11 @@
+<app-navbar></app-navbar>
 <mat-tab-group (selectedTabChange)="onTabChange($event.tab.textLabel)">
   <mat-tab label="All Notes"></mat-tab>
   <mat-tab label="Completed"></mat-tab>
   <mat-tab label="Pending"></mat-tab>
-  <mat-tab label="Delete a Task"></mat-tab>
 </mat-tab-group>
 
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" style="width: 100%; margin-top: 10px;">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" style="width: 100%; margin-top: 15px;">
 
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
@@ -30,7 +30,8 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef>Action</th>
     <td mat-cell *matCellDef="let note">
-      <button mat-button color="warn" (click)="deleteNote(note.id)">Delete</button>
+      <button mat-stroked-button color="primary" style="margin-right: 5px;" (click)="editNote(note)" >Edit</button>
+      <button mat-stroked-button color="warn" (click)="deleteNote(note.id)">Delete</button>
     </td>
   </ng-container>
 

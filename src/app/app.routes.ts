@@ -1,9 +1,13 @@
 import { Routes } from '@angular/router';
-import { NotesComponent } from './components/notes/notes.component';
+
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'notes',
         loadComponent: () => import('./components/notes/notes.component').then(m => m.NotesComponent)
+    },
+    {
+        path:'',
+        loadComponent:() => import('./components/register/register.component').then(m => m.RegisterComponent)
     }
 ];
